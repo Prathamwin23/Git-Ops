@@ -165,21 +165,28 @@ kubectl version --client
 docker --version
 helm version
 ```
-Install Helm
-powershell# Download Helm
-Invoke-WebRequest -Uri "https://get.helm.sh/helm-v3.19.0-windows-amd64.zip" -OutFile "$env:USERPROFILE\Downloads\helm.zip"
 
-# Extract
-Expand-Archive -Path "$env:USERPROFILE\Downloads\helm.zip" -DestinationPath "$env:USERPROFILE\helm" -Force
+# 1️⃣ Download Helm binary
+Invoke-WebRequest -Uri "https://get.helm.sh/helm-v3.19.0-windows-amd64.zip" `
+  -OutFile "$env:USERPROFILE\Downloads\helm.zip"
 
-# Add to PATH permanently
-[Environment]::SetEnvironmentVariable("Path", $env:Path + ";$env:USERPROFILE\helm\windows-amd64", "User")
+# 2️⃣ Extract the archive
+Expand-Archive -Path "$env:USERPROFILE\Downloads\helm.zip" `
+  -DestinationPath "$env:USERPROFILE\helm" -Force
 
-# For current session (before restarting PowerShell)
+# 3️⃣ Add Helm to PATH (permanently for your user)
+[Environment]::SetEnvironmentVariable(
+  "Path",
+  $env:Path + ";$env:USERPROFILE\helm\windows-amd64",
+  "User"
+)
+
+# 4️⃣ Add Helm to current PowerShell session (temporary)
 $env:Path += ";$env:USERPROFILE\helm\windows-amd64"
 
-# Verify (restart PowerShell or use current session PATH)
+# 5️⃣ Verify installation
 helm version
+
 
 </details>
 
