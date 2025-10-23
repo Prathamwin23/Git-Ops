@@ -27,7 +27,7 @@ This is a sample application designed to illustrate various concepts related to 
 - [Infrastructure Components](#infrastructure-components)
 - [CI/CD Pipeline](#cicd-pipeline)
 - [Monitoring and Observability](#monitoring-and-observability)
-- [Cleanup](https://github.com/Prathamwin23/retail-store-sample-app/blob/main/README.md#step-12-cleanup)
+- [Cleanup](https://github.com/Prathamwin23/Git-Ops/blob/main/README.md#step-12-cleanup)
 - [Troubleshooting](#troubleshooting)
 
 ## Overview
@@ -46,7 +46,7 @@ The Retail Store Sample App demonstrates a modern microservices architecture dep
 
 The application has been deliberately over-engineered to generate multiple de-coupled components. These components generally have different infrastructure dependencies, and may support multiple "backends" (example: Carts service supports MongoDB or DynamoDB).
 
-![Architecture](https://github.com/aws-containers/retail-store-sample-app/raw/main/docs/images/architecture.png)
+![Architecture](https://github.com/aws-containers/Git-Ops/raw/main/docs/images/architecture.png)
 
 | Component                  | Language | Container Image                                                             | Helm Chart                                                                        | Description                             |
 | -------------------------- | -------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------- |
@@ -77,7 +77,7 @@ The Infrastructure Architecture follows cloud-native best practices:
 
 1. **Install Prerequisites**: AWS CLI, Terraform, kubectl, Docker, Helm
 2. **Configure AWS**: `aws configure` with appropriate credentials
-3. **Clone Repository**: `git clone https://github.com/Prathamwin23/retail-store-sample-app.git`
+3. **Clone Repository**: `git clone https://github.com/Prathamwin23/Git-Ops.git`
 4. **Deploy Infrastructure**: Run Terraform in two phases (see [Getting Started](#getting-started))
 5. **Access Application**: Get load balancer URL and browse the retail store
 
@@ -109,7 +109,7 @@ This repository uses a **dual-branch approach** for different deployment scenari
 
 1. **Install Prerequisites**: AWS CLI, Terraform, kubectl, Docker, Helm
 2. **Configure AWS**: `aws configure` with appropriate credentials
-3. **Clone Repository**: `git clone https://github.com/Prathamwin23/retail-store-sample-app.git`
+3. **Clone Repository**: `git clone https://github.com/Prathamwin23/Git-Ops.git`
 4. **Deploy Infrastructure**: Run Terraform in two phases (see [Getting Started](#getting-started))
 5. **Access Application**: Get load balancer URL and browse the retail store
 
@@ -182,7 +182,7 @@ aws configure
 ### Step 2. Clone the Repository:
 
 ```sh
-git clone https://github.com/Prathamwin23/retail-store-sample-app.git
+git clone https://github.com/Prathamwin23/Git-Ops.git
 ```
 
 > [!IMPORTANT]
@@ -203,7 +203,7 @@ git clone https://github.com/Prathamwin23/retail-store-sample-app.git
 ### Step 4. Deploy Infrastructure with Terraform:
 
 ```sh
-cd retail-store-sample-app/terraform/
+cd Git-Ops/terraform/
 terraform init
 terraform apply --auto-approve
 ```
